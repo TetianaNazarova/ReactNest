@@ -1,16 +1,20 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
+import hashMap from './utils/hashMap';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-    const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
-    useEffect(() => {
-        fetch('/api/hello')
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }, [])
+  const newHash = new hashMap();
+
+  newHash.set('Tetiana', 2200);
+
+  console.log(newHash.get('Tetiana'));
+
+  console.log('newHash', newHash);
+
 
   return (
     <>
